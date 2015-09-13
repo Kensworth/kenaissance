@@ -13,53 +13,30 @@
 	 	);
 	}
 
-	if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
-		//set
+	if(isset($_GET['e']) && !empty($_GET['e']) AND isset($_GET['h']) && !empty($_GET['h'])){
 		require('password.php');
 		$options = [
 		    'cost' => 15,
 		    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 		];
-		
-		$email = $_POST['email'];
-		$username = $_POST['username'];
-		$password = password_hash(($_POST['password']), PASSWORD_BCRYPT, $options);
-		$vpassword = password_hash(($_POST['vpassword']), PASSWORD_BCRYPT, $options);
-		$salt = $options['salt'];
+		$email = $_GET['e'];
+		$password = password_hash(($_GET['h']), PASSWORD_BCRYPT, $options);
 
-		if(strlen($_POST['password']) < 8 || strlen($_POST['password'] > 120)) {
-			echo "<script>location.href='fail.php';</script>";
-		}
-		elseif($_POST['password'] != $_POST['vpassword']) {
-			echo "<script>location.href='fail.php';</script>";
-		}
-		elseif(strlen($_POST['username']) < 3 || strlen($_POST['username']) > 60) {
-			echo "<script>location.href='fail.php';</script>";
-		} 
-		elseif(!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", $email)){
-			echo "<script>location.href='fail.php';</script>";
-		} 
-		elseif(!($query = $connection->prepare("INSERT INTO users (email, username, password, salt) VALUES (?,?,?,?)"))) {
+		if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
 		     echo "<script>location.href='fail.php';</script>";
 		}
-		elseif(!$query->bind_param("ssss", $email, $username, $password, $salt)) {
+		elseif(!$query->bind_param("ss", $email, $password)) {
 		    echo "<script>location.href='fail.php';</script>";
 		}
 		elseif(!$query->execute()) {
 			echo "<script>location.href='fail.php';</script>";
 		}
-
-		$email_to = $email;
-		$email_subject = "Confirmation Email";
-		$email_message = "Hello, " . $username . ". Thanks for signing up. Click the following link to continue. \r\n http://www.kennethzhang.net/verify.php?e=" . $email . "&h=" . $password;
-		$headers = "From: kennethzhang.net\r\n".
-		"Reply-To: kennethzhang@yahoo.com\r\n'" .
-		"X-Mailer: PHP/" . phpversion();
-		mail($email_to, $email_subject, $email_message, $headers); 
-
-		$query->close();
-		$connection->close();
-	}	
+		// compare get values with DB values, redirect to fail if wrong, direct to main page if correct, create session cookie, etc.
+	}
+	else {
+		echo "<script>location.href='fail.php';</script>";
+	}
+	
 ?>
 
 <!DOCTYPE html
