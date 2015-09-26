@@ -1,23 +1,7 @@
 <?php
 	session_start();
-
-	//MODULARIZE THE PHP -> MYSQL CONNECTION
-
-	$hostname = "localhost";
-	$dbusername = "ken";
-	$dbpassword = "Correcthorse1!";
-	$dbname = "kennethzhangnet";
-	
-	$connection = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
-	if($connection->connect_errno) {
-		die("Database connection failed: " . 
-	 		mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-	 	);
-	}
-	else {
-		//successful mysql connection
-	}
-	
+	require('modules/connection.php');
+	require('modules/errors.php');
 	//username and password authentication
 	require('password.php');
 	$query = "SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'";

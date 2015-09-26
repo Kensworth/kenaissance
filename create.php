@@ -1,21 +1,3 @@
-<?php
-	session_start();
-
-	$hostname = "localhost";
-	$dbusername = "ken";
-	$dbpassword = "Correcthorse1!";
-	$dbname = "kennethzhangnet";
-	
-	$connection = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
-	if($connection->connect_errno) {
-		die("Database connection failed: " . 
-	 		mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-	 	);
-	}
-	else {
-		//successful mysql connection
-	}
-?>	
 <!DOCTYPE html
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

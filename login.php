@@ -1,21 +1,7 @@
 <?php
 	session_start();
-
-	$hostname = "localhost";
-	$dbusername = "ken";
-	$dbpassword = "Correcthorse1!";
-	$dbname = "kennethzhangnet";
-	
-	$connection = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
-	if($connection->connect_errno) {
-		die("Database connection failed: " . 
-	 		mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-	 	);
-	}
-	else {
-		//successful mysql connection
-	}
-
+	require('modules/connection.php');
+	require('modules/errors.php');
 	require('password.php');
 ?>
 <!DOCTYPE html
@@ -150,7 +136,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 						//success
 						if($row = mysqli_fetch_assoc($result)) {
 							$options = [
-							    'cost' => 8,
+							    'cost' => 12,
 							    'salt' => $row['salt'],
 							];
 							if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {

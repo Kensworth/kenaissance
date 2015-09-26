@@ -1,37 +1,34 @@
 <?php
 	session_start();
 
-	$hostname = "localhost";
-	$dbusername = "ken";
-	$dbpassword = "Correcthorse1!";
-	$dbname = "kennethzhangnet";
-	
-	$connection = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
-	if($connection->connect_errno) {
-		die("Database connection failed: " . 
-	 		mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-	 	);
-	}
+	require('modules/connection.php');
+	require('modules/errors.php');
 
 	if(isset($_GET['e']) && !empty($_GET['e']) AND isset($_GET['h']) && !empty($_GET['h'])){
 		require('password.php');
 		$options = [
-		    'cost' => 15,
+		    'cost' => 12,
 		    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 		];
 		$email = $_GET['e'];
-		$password = password_hash(($_GET['h']), PASSWORD_BCRYPT, $options);
+		$vString = $_GET['h'];
 
 		if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
 		     echo "<script>location.href='fail.php';</script>";
 		}
-		elseif(!$query->bind_param("ss", $email, $password)) {
+		elseif(!$query->bind_param("ss", $email, $vString)) {
 		    echo "<script>location.href='fail.php';</script>";
 		}
 		elseif(!$query->execute()) {
 			echo "<script>location.href='fail.php';</script>";
 		}
+		else {
+			while ($row = $query->fetch()) {
+		    echo $row;
+		  }
+		}
 		// compare get values with DB values, redirect to fail if wrong, direct to main page if correct, create session cookie, etc.
+		// url example: localhost/~kennethzhang/kennethzhangnet/verify.php?e=kennethzhang@yahoo.com&h=
 	}
 	else {
 		echo "<script>location.href='fail.php';</script>";

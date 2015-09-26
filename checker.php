@@ -1,18 +1,5 @@
 <?php
-	$hostname = "localhost";
-	$dbusername = "ken";
-	$dbpassword = "Correcthorse1!";
-	$dbname = "kennethzhangnet";
-	
-	$connection = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
-	if($connection->connect_errno) {
-		die("Database connection failed: " . 
-	 		mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-	 	);
-	}
-	else {
-		//successful mysql connection
-	}
+	require('modules/connection.php');
 
 	if(isset($_POST['action']) && $_POST['action'] == 'username_availability'){ // Check for the username posted
 		$username = htmlentities($_POST['username']); // Get the username values
