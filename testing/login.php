@@ -28,31 +28,27 @@
 	}
 	else {
 		echo "Execute succeeded. Select finished." . "<br/>";
-	}
-
-	if($result = mysqli_query($connection, $query)) {
-		//success
-		if($row = mysqli_fetch_assoc($result)) {
-			$options = [
-			    'cost' => 12,
-			    'salt' => $row['salt'],
-			];
-			if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {
-				//success
+		$res = $query->get_result();
+		$row = $res->fetch_assoc();
+		$options = [
+		    'cost' => 12,
+		    'salt' => $row['salt'],
+		];
+		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {
 				// LOAD SESSION DATA FOR THAT USER 	
 				if (isset($_POST['rememberme'])) {
 					//set cookie to last one week
 		            $_SESSION['username'] = $username;
 					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
 					$_SESSION['rememberme'] = 'set';
-					$pass = false;
+					echo "<script>location.href='rss.php';</script>";
 		        } 
 		        else {
 		        	//cookie not set
 		            $_SESSION['username'] = $username;
 					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
 					$_SESSION['rememberme'] = 'unset';
-					$pass = false;
+					echo "<script>location.href='rss.php';</script>";
 		        }
 			}
 			else {
@@ -60,16 +56,10 @@
 				$_SESSION["loginerror"] = 1;
 				$pass = false;
 			}
-    	}
-    	else {
-    		unset($_POST);
-			$_SESSION["loginerror"] = 1;
-			$pass = false;
-    	}
-	} 
-	else {
-		die("Database query failed.");
-		$pass = false;
+		}
+		else {
+			$pass == false
+		}
 	}
 	if($pass == false) {
 		//redirect when everything else works
