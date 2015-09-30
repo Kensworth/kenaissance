@@ -4,36 +4,51 @@
 	require('modules/connection.php');
 	require('modules/errors.php');
 
+	if (mysqli_connect_errno()) {
+	    printf("Connect failed: %s\n", mysqli_connect_error());
+	    exit();
+	}
+
 	if(isset($_GET['e']) && !empty($_GET['e']) AND isset($_GET['h']) && !empty($_GET['h'])){
-		require('password.php');
-		$options = [
-		    'cost' => 12,
-		    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-		];
+		$pass = true;
+
 		$email = $_GET['e'];
 		$vString = $_GET['h'];
 
 		if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
-		     echo "<script>location.href='fail.php';</script>";
+			$pass = false;
 		}
-		elseif(!$query->bind_param("ss", $email, $vString)) {
-		    echo "<script>location.href='fail.php';</script>";
+		elseif(!$query->bind_param("s", $email)) {
+			$pass = false;
 		}
 		elseif(!$query->execute()) {
-			echo "<script>location.href='fail.php';</script>";
+			$pass = false;
 		}
 		else {
-			while ($row = $query->fetch()) {
-		    echo $row;
-		  }
+			$res = $query->get_result();
+			$row = $res->fetch_assoc();
+			if($vString == $row['vhash']) {
+				if(!($setActive = $connection->prepare("UPDATE users SET active = 1 WHERE email = ?"))) {
+					$pass = false;
+				}
+				elseif(!$setActive->bind_param("s", $email)) {
+					$pass = false;
+				}
+				elseif(!$setActive->execute()) {
+					$pass = false;
+				}
+			}
+			else {
+				$pass = false;
+			}
 		}
-		// compare get values with DB values, redirect to fail if wrong, direct to main page if correct, create session cookie, etc.
-		// url example: localhost/~kennethzhang/kennethzhangnet/verify.php?e=kennethzhang@yahoo.com&h=
 	}
 	else {
+		$pass = false;
+	}
+	if($pass == false) {
 		echo "<script>location.href='fail.php';</script>";
 	}
-	
 ?>
 
 <!DOCTYPE html
@@ -72,7 +87,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		z-index: 100;
 		color: white;
 		font-size: 15px;
-		left: 35%;
+		left: 48%;
     	top: 21%;
     	border-radius:5px;
     	background: rgba(0, 0, 0, 0.3);
@@ -82,7 +97,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 </head>
 <body>
 		<div id = "testing">
-			Please click the confirmation we sent to your email. <br/> It may take several minutes to arrive.
+			Verifed!
 			<br/>
 		</div>
 </body>
