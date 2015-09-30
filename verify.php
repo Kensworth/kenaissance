@@ -97,7 +97,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 </head>
 <body>
 		<div id = "testing">
-			Verifed!
+			Verifed.
 			<br/>
 		</div>
 </body>
