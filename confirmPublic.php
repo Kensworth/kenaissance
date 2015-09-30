@@ -1,10 +1,5 @@
 <?php
 	session_start();
-	// MYSQL BCRYPT THE CONNECTION?????
-
-	// USE GITHUB BRANCHES SO AS TO NOT DESTROY PROGRESS
-
-	//CLOSE MYSQL CONNECTIONS LIKE $STMT->CLOSE
 
 	require('modules/connection.php');
 	require('modules/errors.php');
