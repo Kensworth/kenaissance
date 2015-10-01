@@ -6,11 +6,13 @@
 ?>
 <?php if (!empty($_POST)): ?>
 <?php
+	$pass = true;
 	$email = isset($_POST['email']) ? $_POST['username'] : false;
 	$password = isset($_POST['password']) ? $_POST['password'] : false;
 
 	if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
 	     echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	     $pass = false;
 	}
 	else {
 		echo "Prepare succeeded" . "<br/>";
@@ -18,6 +20,7 @@
 
 	if(!$query->bind_param("s", $email)) {
 	    echo "Binding parameters failed: (" . $connection->errno . ") " . $connection->error;
+	    $pass = false;
 	}
 	else {
 		echo "Binding succeeded" . "<br/>";
@@ -25,6 +28,7 @@
 	
 	if(!$query->execute()) {
 		echo "Execute failed: (" . $connection->errno . ") " . $connection->error;
+		$pass = false;
 	}
 	else {
 		echo "Execute succeeded. Select finished." . "<br/>";
@@ -33,36 +37,38 @@
 		$options = [
 		    'cost' => 12,
 		    'salt' => $row['salt'],
+		    // this is not outputting anything
 		];
 		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {
-				// LOAD SESSION DATA FOR THAT USER 	
-				if (isset($_POST['rememberme'])) {
-					//set cookie to last one week
-		            $_SESSION['username'] = $username;
-					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-					$_SESSION['rememberme'] = 'set';
-					echo "<script>location.href='rss.php';</script>";
-		        } 
-		        else {
-		        	//cookie not set
-		            $_SESSION['username'] = $username;
-					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-					$_SESSION['rememberme'] = 'unset';
-					echo "<script>location.href='rss.php';</script>";
-		        }
-			}
-			else {
-				unset($_POST);
-				$_SESSION["loginerror"] = 1;
-				$pass = false;
-			}
+			print_r($options);
+			// LOAD SESSION DATA FOR THAT USER 	
+			if (isset($_POST['rememberme']) && isset($_SESSION['email']) && isset($_SESSION['password'])) {
+				//set cookie to last one week
+	            $_SESSION['email'] = $email;
+				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
+				$_SESSION['rememberme'] = 'set';
+				//echo "<script>location.href='rss.php';</script>";
+				echo "passed and cookie";
+				// somehow going here because the two are both null??
+	        } 
+	        else {
+	        	//cookie not set
+	            /*$_SESSION['username'] = $username;
+				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);*/
+				$_SESSION['rememberme'] = 'unset';
+				//echo "<script>location.href='rss.php';</script>";
+				echo "<br /> passed and no cookie <br />";
+	        }
 		}
 		else {
-			$pass == false
+			unset($_POST);
+			$_SESSION["loginerror"] = 1;
+			$pass = false;
+			echo "no pass";
 		}
 	}
 	if($pass == false) {
-		//redirect when everything else works
+		//echo "<script>location.href='fail.php';</script>";
 	}
 ?>
 <?php else: ?>
