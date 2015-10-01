@@ -7,7 +7,7 @@
 <?php if (!empty($_POST)): ?>
 <?php
 	$pass = true;
-	$email = isset($_POST['email']) ? $_POST['username'] : false;
+	$email = isset($_POST['email']) ? $_POST['email'] : false;
 	$password = isset($_POST['password']) ? $_POST['password'] : false;
 
 	if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
@@ -73,7 +73,7 @@
 ?>
 <?php else: ?>
     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class = "forms" onsubmit = "return validateForm()">
-        Email: <input type="text" name="username"><br/>
+        Email: <input type="text" name="email"><br/>
         Password:&nbsp <input type="password" name="password"><br/>
         <input type = "submit" value = "Connect" id="connectButton">
         	<?php 
