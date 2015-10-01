@@ -42,14 +42,13 @@
 		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {
 			print_r($options);
 			// LOAD SESSION DATA FOR THAT USER 	
-			if (isset($_POST['rememberme']) && isset($_SESSION['email']) && isset($_SESSION['password'])) {
+			if (isset($_POST['rememberme'])) {
 				//set cookie to last one week
 	            $_SESSION['email'] = $email;
 				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
 				$_SESSION['rememberme'] = 'set';
 				//echo "<script>location.href='rss.php';</script>";
-				echo "passed and cookie";
-				// somehow going here because the two are both null??
+				echo "<br /> passed and cookie <br />";
 	        } 
 	        else {
 	        	//cookie not set
@@ -62,17 +61,19 @@
 		}
 		else {
 			unset($_POST);
-			$_SESSION["loginerror"] = 1;
+			$_SESSION["loginerror"] = 1; // make loginerror direct to original form + span tag red
 			$pass = false;
-			echo "no pass";
+			echo "no pass <br />";
 		}
 	}
 	if($pass == false) {
 		//echo "<script>location.href='fail.php';</script>";
+		echo "pass var == false <br />";
 	}
 ?>
 <?php else: ?>
-    <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class = "forms" onsubmit = "return validateForm()">
+	<!-- deleted onsubmit = "return validateForm()" -->
+    <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class = "forms">
         Email: <input type="text" name="email"><br/>
         Password:&nbsp <input type="password" name="password"><br/>
         <input type = "submit" value = "Connect" id="connectButton">
