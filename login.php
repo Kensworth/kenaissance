@@ -37,9 +37,8 @@
 		$options = [
 		    'cost' => 12,
 		    'salt' => $row['salt'],
-		    // this is not outputting anything
 		];
-		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password']) {
+		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password'] && $row['email'] != null) {
 			print_r($options);
 			// LOAD SESSION DATA FOR THAT USER 	
 			if (isset($_POST['rememberme'])) {
