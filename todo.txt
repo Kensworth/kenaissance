@@ -2,7 +2,7 @@ get login to properly return to form and also include red span if loginerror = 1
 
 hash email and mysql connection
 
-consider switching to rijndael, scrypt, or pbkdf2
+consider switching email and mysql to rijndael and switching passwords to scrypt or pbkdf2
 
 create personal page
 
