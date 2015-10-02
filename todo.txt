@@ -1,0 +1,13 @@
+get login to properly return to form and also include red span if loginerror = 1
+
+hash email and mysql connection
+
+consider switching to rijndael, scrypt, or pbkdf2
+
+create personal page
+
+create landing page
+
+link rss and other frontend pages to backend
+
+push to live webserver on kenaissance.com
