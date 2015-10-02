@@ -43,6 +43,7 @@
 			// LOAD SESSION DATA FOR THAT USER 	
 			if (isset($_POST['rememberme'])) {
 				//set cookie to last one week
+				//encrypted cookies AES?
 	            $_SESSION['email'] = $email;
 				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
 				$_SESSION['rememberme'] = 'set';
