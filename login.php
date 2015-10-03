@@ -43,36 +43,33 @@
 			// LOAD SESSION DATA FOR THAT USER 	
 			if (isset($_POST['rememberme'])) {
 				//set cookie to last one week
-				//encrypted cookies AES?
 	            $_SESSION['email'] = $email;
 				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-				$_SESSION['rememberme'] = 'set';
-				//echo "<script>location.href='rss.php';</script>";
-				echo "<br /> passed and cookie <br />";
+				$_SESSION['rememberme'] = 1;
+
+				//encrypted cookies - AES?
+
+				// go to site
 	        } 
 	        else {
 	        	//cookie not set
-	            /*$_SESSION['username'] = $username;
-				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);*/
-				$_SESSION['rememberme'] = 'unset';
-				//echo "<script>location.href='rss.php';</script>";
-				echo "<br /> passed and no cookie <br />";
+	            $_SESSION['username'] = $username;
+				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
+				$_SESSION['rememberme'] = 0;
+				// go to site
 	        }
 		}
 		else {
 			unset($_POST);
-			$_SESSION["loginerror"] = 1; // make loginerror direct to original form + span tag red
-			$pass = false;
-			echo "no pass <br />";
+			$_SESSION["loginerror"] = 1;
+			echo "<script>location.href='login.php';</script>";
 		}
 	}
 	if($pass == false) {
-		//echo "<script>location.href='fail.php';</script>";
-		echo "pass var == false <br />";
+		echo "<script>location.href='fail.php';</script>";
 	}
 ?>
 <?php else: ?>
-	<!-- deleted onsubmit = "return validateForm()" -->
     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class = "forms">
         Email: <input type="text" name="email"><br/>
         Password:&nbsp <input type="password" name="password"><br/>
