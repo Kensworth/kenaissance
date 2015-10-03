@@ -11,27 +11,27 @@
 	$password = isset($_POST['password']) ? $_POST['password'] : false;
 
 	if(!($query = $connection->prepare("SELECT * FROM users WHERE email = ?"))) {
-	     echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-	     $pass = false;
-	}
-	else {
-		echo "Prepare succeeded" . "<br/>";
-	}
-
-	if(!$query->bind_param("s", $email)) {
-	    echo "Binding parameters failed: (" . $connection->errno . ") " . $connection->error;
+	    // echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
 	    $pass = false;
 	}
 	else {
-		echo "Binding succeeded" . "<br/>";
+		// echo "Prepare succeeded" . "<br/>";
+	}
+
+	if(!$query->bind_param("s", $email)) {
+	    // echo "Binding parameters failed: (" . $connection->errno . ") " . $connection->error;
+	    $pass = false;
+	}
+	else {
+		// echo "Binding succeeded" . "<br/>";
 	}
 	
 	if(!$query->execute()) {
-		echo "Execute failed: (" . $connection->errno . ") " . $connection->error;
+		// echo "Execute failed: (" . $connection->errno . ") " . $connection->error;
 		$pass = false;
 	}
 	else {
-		echo "Execute succeeded. Select finished." . "<br/>";
+		// echo "Execute succeeded. Select finished." . "<br/>";
 		$res = $query->get_result();
 		$row = $res->fetch_assoc();
 		$options = [
@@ -39,23 +39,21 @@
 		    'salt' => $row['salt'],
 		];
 		if(password_hash($password, PASSWORD_BCRYPT, $options) == $row['password'] && $row['email'] != null) {
-			print_r($options);
-			// LOAD SESSION DATA FOR THAT USER 	
+			// print_r($options);
+			// cookies set	
 			if (isset($_POST['rememberme'])) {
-				//set cookie to last one week
-	            $_SESSION['email'] = $email;
+	            $_SESSION['email'] = $email; // hackingwithphp.com/10/1/3/choosing-the-appropriate-option -> store sessions in database?
 				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-				$_SESSION['rememberme'] = 1;
-
-				//encrypted cookies - AES?
-
+				$_SESSION['rememberme'] = 1; // this should be a cookie
 				// go to site
+
+				// add cookies that last one month. encrypt them. AES?
 	        } 
 	        else {
 	        	//cookie not set
-	            $_SESSION['username'] = $username;
+	            $_SESSION['email'] = $email;
 				$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-				$_SESSION['rememberme'] = 0;
+				$_SESSION['rememberme'] = 0; // this should also be a cookie
 				// go to site
 	        }
 		}
