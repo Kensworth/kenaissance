@@ -1,6 +1,8 @@
 get login to properly return to form and also include red span if loginerror = 1
 
-hash email and mysql connection
+encrypt email and mysql connection
+
+switch from mcrypt to openssl
 
 consider switching email and mysql to rijndael and switching passwords to scrypt or pbkdf2
 
