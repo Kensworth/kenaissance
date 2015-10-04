@@ -81,6 +81,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	}
 	span {
 		color: red;
+		font-size: 14px;
+	}
+	#rememberme {
+		text-align: center;
+		font-size: 14px;
 	}
 </style>
 
@@ -139,16 +144,15 @@ $(document).ready(function(){
 				if (isset($_POST['rememberme'])) {
 		            $_SESSION['email'] = $email; // hackingwithphp.com/10/1/3/choosing-the-appropriate-option -> store sessions in database?
 					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-					$_SESSION['rememberme'] = 1; // this should be a cookie
+					$_SESSION['rememberme'] = 1;
 					// go to site
-
-					// add cookies that last one month. encrypt them. AES?
+					// on front-end add cookies that last one month. encrypt them. AES?
 		        } 
 		        else {
 		        	//cookie not set
 		            $_SESSION['email'] = $email;
 					$_SESSION['password'] = password_hash($password, PASSWORD_BCRYPT, $options);
-					$_SESSION['rememberme'] = 0; // this should also be a cookie
+					$_SESSION['rememberme'] = 0;
 					// go to site
 		        }
 			}
@@ -190,10 +194,13 @@ $(document).ready(function(){
 			    </table>
 			    <div id="create">
 					<input type = "submit" value = "Create" id="connectButton">
+				</div>
+				<div id = "rememberme">
+					<br /> Remember me: &nbsp;<input type="checkbox" name="rememberme" value="1"><br/>
 					<?php 
 						if(isset($_SESSION["loginerror"])) {
 							if($_SESSION["loginerror"] == 1) {
-								echo "<span> <br /> <br /> Invalid username or password </span>";
+								echo "<span> <br /> Invalid username or password </span>";
 								session_destroy();
 							}
 						}
