@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 2015 kenneth zhang -->
 <html>
 <head>
 <meta charset="utf-8">
@@ -158,9 +159,9 @@
   <div class="parallax">
     <div id="group2" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
-        <div class="title"><strong>Kenneth Zhang</strong></div>
       </div>
       <div class="parallax__layer parallax__layer--back">
+        <div class="title"><strong>Kenneth Zhang</strong></div>
       </div>
     </div>
     <div id="group3" class="parallax__group">
