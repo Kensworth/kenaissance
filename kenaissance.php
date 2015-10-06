@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-</script>
 
 <style>
   .email a {
@@ -84,7 +84,7 @@
   }
 
   body {
-    font: 100% / 1.5 Typograph Pro;
+    font: 100% / 1.5 Arvo;
   }
 
   * {
@@ -103,7 +103,7 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: #FFFFFF;
+    color: Black;
     font-size: 50px;
     text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
   }
@@ -159,10 +159,8 @@
     <div id="group2" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
         <div class="title"><strong>Kenneth Zhang</strong></div>
-        <div class="secondary">NYC Entrepreneur</div>
       </div>
       <div class="parallax__layer parallax__layer--back">
-        <div class="scrolldown"><em>scroll down</em></div>
       </div>
     </div>
     <div id="group3" class="parallax__group">
@@ -182,7 +180,7 @@
                 </font>
               </p>
               <p class = "email">
-                Email:<a href="mailto:kennethzhang@yahoo.com"> kennethzhang@yahoo.com</a> 
+                Email:<a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
               </p>
             </div>
           </ul>
