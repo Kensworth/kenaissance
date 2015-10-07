@@ -1,15 +1,13 @@
-get login to properly return to form and also include red span if loginerror = 1
+change old website page to match newer design
 
-encrypt email and mysql connection
+create simple animations for website
 
-switch from mcrypt to openssl
-
-consider switching email and mysql to rijndael and switching passwords to scrypt or pbkdf2
-
-create personal page
-
-create landing page
+create landing page for users
 
 link rss and other frontend pages to backend
 
 push to live webserver on kenaissance.com
+
+consider switching from mcrypt to openssl
+
+look further into rijndael
