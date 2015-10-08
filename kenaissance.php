@@ -9,24 +9,24 @@
 
 <style>
   .email a {
-    color: #FFFFFF;
+    color: #001F66;
     text-decoration: none;
   }
 
   .Content {
-    font-size: 20px;
+    font-size: 34px;
   }
 
   .About {
-    padding: 20px;
-    position: relative;
-    left: 250px;
-    margin-top: 100px;
-    height: 500px;
-    width: 700px;
-    color: white;
     text-align: center;
-
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #001F66;
+    text-decoration: none;
+    font-size: 60px;
   }
 
   .parallax {
@@ -68,7 +68,7 @@
 
   .parallax__layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
+    transform: translateZ(-400px) scale(2);
     z-index: 3;
   }
 
@@ -102,7 +102,7 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: Black;
-    font-size: 50px;
+    font-size: 60px;
     text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
   }
 
@@ -143,11 +143,7 @@
   }
 
   #group3 .parallax__layer--base {
-    background: black;
-  }
-
-  #forest {
-    border-top: 1px solid black;
+    /*background: black;*/
   }
   span {
     color:yellow;
@@ -155,7 +151,7 @@
 </style>
 </head>
 
-<body bgcolor="black">
+<body>
   <div class="parallax">
     <div id="group2" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
@@ -170,15 +166,7 @@
           <ul class="tabs">
             <div class = "Content">
               <p>
-                Kenneth is an entrepreneur residing in <span> New York City </span>. He is pursuing a dual degree in Computer Science and Economics from New York University. He has worked as a product manager at Yahoo, as well as at several startups. In his free time he loves reading, olympic weightlifting, and playing piano.</p>
-              <p>
-                 <br>
-                <font size="5" font-family="Garamond">
-                  <strong>
-                    Contact Information 
-                  </strong>
-                </font>
-              </p>
+                Kenneth is an entrepreneur residing in New York City. He is pursuing a dual degree in Computer Science and Economics from New York University. He has worked as a product manager at Yahoo, as well as at several startups. In his free time he loves reading, olympic weightlifting, and playing piano.</p> <br />
               <p class = "email">
                 Email:<a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
               </p>
