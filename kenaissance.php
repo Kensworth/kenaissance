@@ -13,8 +13,16 @@
     text-decoration: none;
   }
 
-  .Content {
-    font-size: 34px;
+  .title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: Black;
+    font-size: 6vmin;
+    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
   }
 
   .About {
@@ -26,7 +34,7 @@
     transform: translate(-50%, -50%);
     color: #001F66;
     text-decoration: none;
-    font-size: 60px;
+    font-size: 4vmin;
   }
 
   .parallax {
@@ -68,7 +76,7 @@
 
   .parallax__layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-400px) scale(2);
+    transform: translateZ(-600px) scale(3);
     z-index: 3;
   }
 
@@ -94,42 +102,6 @@
     font-size: 200%;
   }
 
-  .title {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: Black;
-    font-size: 60px;
-    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
-  }
-
-  .secondary {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 450px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #FFFFFF;
-    font-size: 30px;
-    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
-  }
-
-  .scrolldown {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 95%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #FFFFFF;
-    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
-    font-size: 20px
-  }
-
   #group2 {
     z-index: 3;
   }
@@ -144,9 +116,6 @@
 
   #group3 .parallax__layer--base {
     /*background: black;*/
-  }
-  span {
-    color:yellow;
   }
 </style>
 </head>
@@ -163,15 +132,11 @@
     <div id="group3" class="parallax__group">
       <div class="parallax__layer parallax__layer--fore">
         <div class="About">
-          <ul class="tabs">
-            <div class = "Content">
-              <p>
-                Kenneth is an entrepreneur residing in New York City. He is pursuing a dual degree in Computer Science and Economics from New York University. He has worked as a product manager at Yahoo, as well as at several startups. In his free time he loves reading, olympic weightlifting, and playing piano.</p> <br />
-              <p class = "email">
-                Email:<a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
-              </p>
-            </div>
-          </ul>
+          <p>
+            Developer with experience at Yahoo, Spark, and TRMG. Pursuing a dual degree in Computer Science and Economics from New York University.</p> <br />
+          <p class = "email">
+            Email:<a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
+          </p>
         </div>
       </div>
       <div class="parallax__layer parallax__layer--base">
