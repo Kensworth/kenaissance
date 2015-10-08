@@ -20,13 +20,10 @@
   .About {
     padding: 20px;
     position: relative;
-    left: 30%;
+    left: 250px;
     margin-top: 100px;
-    background-color: black;
-    opacity: 0.8;
-    border-radius: 5px;
-    height: 380px;
-    width: 500px;
+    height: 500px;
+    width: 700px;
     color: white;
     text-align: center;
 
@@ -146,11 +143,14 @@
   }
 
   #group3 .parallax__layer--base {
-    background: #FFFFFF;
+    background: black;
   }
 
   #forest {
     border-top: 1px solid black;
+  }
+  span {
+    color:yellow;
   }
 </style>
 </head>
@@ -168,10 +168,9 @@
       <div class="parallax__layer parallax__layer--fore">
         <div class="About">
           <ul class="tabs">
-            <div class = "AboutTitle"><strong>About</strong></div>
             <div class = "Content">
               <p>
-                Kenneth is an entrepreneur residing in New York City. He is pursuing a dual degree in Computer Science and Economics from New York University. He has worked as a product manager at Yahoo, as well as at several startups. In his free time he loves reading, olympic weightlifting, and playing piano.</p>
+                Kenneth is an entrepreneur residing in <span> New York City </span>. He is pursuing a dual degree in Computer Science and Economics from New York University. He has worked as a product manager at Yahoo, as well as at several startups. In his free time he loves reading, olympic weightlifting, and playing piano.</p>
               <p>
                  <br>
                 <font size="5" font-family="Garamond">
@@ -188,7 +187,7 @@
         </div>
       </div>
       <div class="parallax__layer parallax__layer--base">
-        <img src = "http://i.imgur.com/Burv9vn.gif" height = "100%" width = "100%" id = "forest"/>
+        <!--<img src = "http://i.imgur.com/Burv9vn.gif" height = "100%" width = "100%" id = "forest"/> -->
       </div>
     </div>
   </div>
