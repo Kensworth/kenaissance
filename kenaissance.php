@@ -9,7 +9,11 @@
 
 <style>
   .email a {
-    color: #001F66;
+    color: #001F67;
+    text-decoration: none;
+  }
+
+  a {
     text-decoration: none;
   }
 
@@ -22,7 +26,6 @@
     transform: translate(-50%, -50%);
     color: Black;
     font-size: 6vmin;
-    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
   }
 
   .About {
@@ -32,7 +35,7 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: #001F66;
+    color: #001F67;
     text-decoration: none;
     font-size: 4vmin;
   }
@@ -76,7 +79,7 @@
 
   .parallax__layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-600px) scale(3);
+    transform: translateZ(-550px) scale(3);
     z-index: 3;
   }
 
@@ -117,6 +120,38 @@
   #group3 .parallax__layer--base {
     /*background: black;*/
   }
+  #yahoo {
+    color:#7B0099;
+    border-bottom: .25rem solid #7B0099;
+  }
+  #spark {
+    color:#008cba;
+    border-bottom: .25rem solid #008cba;
+  }
+  #trmg {
+    color:#FF6600;
+    border-bottom: .25rem solid #FF6600;
+  }
+  #github {
+    color:green;
+    border-bottom: .25rem solid green;
+  }
+  #linkedin {
+    color:#007bb5;
+    border-bottom: .25rem solid #007bb5;
+  }
+  #instagram {
+    color:#125688;
+    border-bottom: .25rem solid #125688;
+  }
+  #facebook {
+    color:#3b5998;
+    border-bottom: .25rem solid #3b5998;
+  }
+  #securityoverride {
+    color:black;
+    border-bottom: .25rem solid black;
+  }
 </style>
 </head>
 
@@ -132,10 +167,14 @@
     <div id="group3" class="parallax__group">
       <div class="parallax__layer parallax__layer--fore">
         <div class="About">
+          <!-- design inspired by graham hicks -->
           <p>
-            Developer with experience at Yahoo, Spark, and TRMG. Pursuing a dual degree in Computer Science and Economics from New York University.</p> <br />
+            Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from New York University.</p> <br />
+          <p>
+            Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a>
+          </p>
           <p class = "email">
-            Email:<a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
+            <br /> Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
           </p>
         </div>
       </div>
