@@ -156,7 +156,7 @@
 $(document).ready(function() {
   $(".parallax").animate({
       scrollTop: $(document).height()
-    }, 500);
+    }, 1000);
   return false;
 });
 </script>
