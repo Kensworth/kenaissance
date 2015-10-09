@@ -109,10 +109,6 @@
     z-index: 3;
   }
 
-  #group2 .parallax__layer--back {
-    background: #FFFFFF;
-  }
-
   #group3 {
     z-index: 4;
   }
