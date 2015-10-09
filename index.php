@@ -95,10 +95,6 @@
     padding:0;
   }
 
-  .parallax {
-    font-size: 200%;
-  }
-
   #group2 {
     z-index: 3;
   }
