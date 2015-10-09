@@ -19,6 +19,7 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: Black;
+    font-size: 3em; /*fallback*/
     font-size: 6vmin;
   }
 
@@ -31,6 +32,7 @@
     transform: translate(-50%, -50%);
     color: #001F67;
     text-decoration: none;
+    font-size: 2em;/*fallback*/
     font-size: 4vmin;
   }
 
@@ -95,10 +97,6 @@
     padding:0;
   }
 
-  .parallax {
-    font-size: 200%;
-  }
-
   #group2 {
     z-index: 3;
   }
@@ -107,9 +105,6 @@
     z-index: 4;
   }
 
-  #group3 .parallax__layer--base {
-    /*background: black;*/
-  }
   #yahoo {
     color:#7B0099;
     border-bottom: .25rem solid #7B0099;
