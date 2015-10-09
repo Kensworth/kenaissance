@@ -37,7 +37,6 @@
     color: #001F67;
     text-decoration: none;
     font-size: 4vmin;
-    background-color: white;
   }
 
   .parallax {
