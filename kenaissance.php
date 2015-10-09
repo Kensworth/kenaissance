@@ -155,9 +155,9 @@
 </style>
 <script>
 $(document).ready(function() {
-  $("html, body").animate({
+  $(".parallax").animate({
       scrollTop: $(document).height()
-    }, 2000);
+    }, 1000);
   return false;
 });
 </script>
