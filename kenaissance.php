@@ -5,8 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style>
   .email a {
     color: #001F67;
@@ -38,6 +37,7 @@
     color: #001F67;
     text-decoration: none;
     font-size: 4vmin;
+    background-color: white;
   }
 
   .parallax {
@@ -153,8 +153,15 @@
     border-bottom: .25rem solid black;
   }
 </style>
+<script>
+$(document).ready(function() {
+  $("html, body").animate({
+      scrollTop: $(document).height()
+    }, 2000);
+  return false;
+});
+</script>
 </head>
-
 <body>
   <div class="parallax">
     <div id="group2" class="parallax__group">
@@ -171,7 +178,7 @@
           <p>
             Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from New York University.</p> <br />
           <p>
-            Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a>
+            Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a>
           </p>
           <p class = "email">
             <br /> Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
