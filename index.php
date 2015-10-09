@@ -132,6 +132,10 @@
     color:#FF6600;
     border-bottom: .25rem solid #FF6600;
   }
+  #nyu {
+    color:#57068c;
+    border-bottom: .25rem solid #57068c;
+  }
   #github {
     color:green;
     border-bottom: .25rem solid green;
@@ -187,7 +191,7 @@ ga('send', 'pageview');
         <div class="About">
           <!-- design inspired by graham hicks -->
           <p>
-            Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from New York University.</p> <br />
+            Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from <a href = "https://www.nyu.edu"><span id = "nyu">New York University.</span></a></p> <br />
           <p>
             Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a>
           </p>
