@@ -7,11 +7,6 @@
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style>
-  .email a {
-    color: #001F67;
-    text-decoration: none;
-  }
-
   a {
     text-decoration: none;
   }
@@ -151,12 +146,17 @@
     color:black;
     border-bottom: .25rem solid black;
   }
+  .email a {
+    color: #001F67;
+    text-decoration: none;
+    border-bottom: .25rem solid #001F67;
+  }
 </style>
 <script>
 $(document).ready(function() {
   $(".parallax").animate({
       scrollTop: $(document).height()
-    }, 1000);
+    }, 500);
   return false;
 });
 </script>
