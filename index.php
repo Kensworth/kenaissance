@@ -39,7 +39,7 @@
     text-decoration: none;
     font-size: 2em;/*fallback*/
     font-size: 4vmin;
-    /* MIN VIEWPORT SIZE IS TAKING THE TOP DOWN AT THE BEGINNING */
+    width: 80vmin;
   }
 
   .parallax {
