@@ -7,6 +7,11 @@
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+
   a {
     text-decoration: none;
   }
@@ -34,6 +39,7 @@
     text-decoration: none;
     font-size: 2em;/*fallback*/
     font-size: 4vmin;
+    /* MIN VIEWPORT SIZE IS TAKING THE TOP DOWN AT THE BEGINNING */
   }
 
   .parallax {
@@ -90,11 +96,6 @@
 
   body {
     font: 100% / 1.5 Arvo;
-  }
-
-  * {
-    margin:0;
-    padding:0;
   }
 
   #group2 {
@@ -180,14 +181,14 @@ ga('send', 'pageview');
       <div class="parallax__layer parallax__layer--fore">
         <div class="About">
           <!-- design inspired by graham hicks -->
-          <p>
-            Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from <a href = "https://www.nyu.edu"><span id = "nyu">New York University.</span></a></p> <br />
-          <p>
-            Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a>
-          </p>
-          <p class = "email">
-            <br /> Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
-          </p>
+            <p>
+            Developer with experience at <a href = "https://www.yahoo.com"><span id = "yahoo">Yahoo</span></a>, <a href = "http://www.thesparkapp.com/"><span id = "spark">Spark</span></a>, and <a href = "http://www.therealmacgenius.com/"><span id = "trmg">TRMG</span></a>. Pursuing a dual degree in Computer Science and Economics from <a href = "https://www.nyu.edu"><span id = "nyu">New York University.</span></a>
+            </p><br />
+            <p>
+            Networks: <a href = "https://github.com/Kensworth"><span id = "github">GitHub</span>, </a><a href = "https://www.linkedin.com/in/kennethzhang1"><span id = "linkedin">LinkedIn</span>, </a><a href = "https://instagram.com/kennaisance/"><span id = "instagram">Instagram</span>, </a><a href = "https://www.facebook.com/KennethZhang95"><span id = "facebook">Facebook</span>, </a><a href = "http://securityoverride.org/profile.php?lookup=19693"><span id = "securityoverride">SecurityOverride</span></a> </p><br />
+          <div class = "email">
+            Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
+          </div>
         </div>
       </div>
       <div class="parallax__layer parallax__layer--base">
