@@ -2,7 +2,7 @@ change old website page to match newer design
 
 create simple animations for website
 
-create landing page for users
+decide on what /home.php should be and build it
 
 link rss and other frontend pages to backend
 
