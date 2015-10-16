@@ -2,7 +2,7 @@ change old website page to match newer design
 
 create simple animations for website
 
-decide on what /home.php should be and build it
+/ should be rss for tech news and have options for challenges and profile
 
 link rss and other frontend pages to backend
 
