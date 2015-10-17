@@ -1,3 +1,5 @@
+Fix SMTP error
+
 change old website page to match newer design
 
 create simple animations for website
