@@ -72,6 +72,14 @@
 		$mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
 		$mail->Port = 587; // TCP port to connect to
 
+		$mail->SMTPOptions = array(
+		    'ssl' => array(
+		        'verify_peer' => false,
+		        'verify_peer_name' => false,
+		        'allow_self_signed' => true
+		    )
+		);
+
 		$mail->From = 'kenaissance.io@gmail.com';
 		$mail->FromName = 'ken';
 		$mail->addAddress($email, $username); // Add a recipient
