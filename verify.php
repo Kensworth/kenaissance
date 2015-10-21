@@ -61,21 +61,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <style>
-	#redSunrise {
-		position: absolute;
-		z-index: 0;
-		min-height: 100%;
-		min-width: 1024px;
-			
-		/* set up proportionate scaling */
-		width: 100%;
-		height: auto;
-			
-		/* set up positioning */
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
 	* {
 		font-family: 'Arvo', sans-serif;
 		margin: 0;
