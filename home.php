@@ -7,16 +7,11 @@
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style>
-  body, html {
-    overflow: hidden;
-  }
-
   * {
     font-family: 'Arvo', sans-serif;
     margin: 0;
     text-decoration: none;
   }
-  
   a:link    {color:white;}  
   a:visited {color:white;}  
   a:hover   {color:gray;} 
