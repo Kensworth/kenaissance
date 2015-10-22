@@ -80,8 +80,10 @@ ga('send', 'pageview');
     var daym = mydate.getDate()
     if (daym < 10)
     daym = "0" + daym
-    var dayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
-    var montharray = new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+    var dayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+    var montharray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+    
+    //Ugliest code block ever from my codecademy days, will clean up later.
     if(hours > 12) {
       if(minutes >= 10) {
       document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +(hours - 12)+":"+minutes+"pm "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
