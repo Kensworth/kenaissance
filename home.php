@@ -16,11 +16,19 @@
   a:visited {color:white;}  
   a:hover   {color:gray;} 
   a:active  {color:#000;}
+  #kenaissance {
+    top: 5%;
+    left: 50%;
+    font-size: 30px;
+    margin-left:-80px;
+    text-align: center;
+    position: absolute;
+  }
   #updateClock {
     top: 9%;
     left: 50%;
     font-size: 20px;
-    margin-left:-120px;
+    margin-left:-150px;
     text-align: center;
     position: absolute;
   }
@@ -53,58 +61,26 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 </head>
 <body>
+  <div id = "kenaissance">
+    kenaissance
+  </div>
   <div id = "updateClock">
     <script>
     //clock
-    var mydate = new Date();
-    var hours = mydate.getHours();
-    var minutes = mydate.getMinutes();
+      function formatDate(date) {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var strTime = hours + ':' + minutes + ' ' + ampm;
+      return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+    }
 
-    var year = mydate.getYear()
-    if (year < 1000)
-    year += 1900
-    var day = mydate.getDay()
-    var month = mydate.getMonth()
-    var daym = mydate.getDate()
-    if (daym < 10)
-    daym = "0" + daym
-    var dayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-    var montharray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-    
-    //Ugliest code block ever, will clean up later.
-    if(hours > 12) {
-      if(minutes >= 10) {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +(hours - 12)+":"+minutes+"pm "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-      else {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +(hours - 12)+":0"+minutes+"pm "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-    }
-    else if(hours == 12) {
-      if(minutes >= 10) {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +hours+":"+minutes+"pm "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-      else {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +hours+":0"+minutes+"pm "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-    }
-    else if(hours == 0) {
-      if(minutes >= 10) {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +(hours+12)+":"+minutes+"am "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-      else {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +(hours+12)+":0"+minutes+"am "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-    }
-    else {
-      if(minutes >= 10) {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +hours+":"+minutes+"am "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-      else {
-      document.write("<small><font color='000000' face='Arial'><b>"+"Last Updated " +hours+":0"+minutes+"am "+ dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></small>");
-      }
-    }
-    
+    var d = new Date();
+    var e = formatDate(d);
+    document.write("Last updated:&nbsp" + e);
     </script>
   </div>
   <div id = "rss">
