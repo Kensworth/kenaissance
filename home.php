@@ -17,7 +17,7 @@
   a:hover   {color:gray;} 
   a:active  {color:#000;}
   #kenaissance {
-    top: 5%;
+    top: 6%;
     left: 50%;
     font-size: 30px;
     margin-left:-80px;
@@ -27,8 +27,8 @@
   #updateClock {
     top: 9%;
     left: 50%;
-    font-size: 20px;
-    margin-left:-150px;
+    font-size: 16px;
+    margin-left:-120px;
     text-align: center;
     position: absolute;
   }
