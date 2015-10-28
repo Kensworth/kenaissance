@@ -1,10 +1,6 @@
-Fix SMTP error
+use reactjs
 
-change old website page to match newer design
-
-create simple animations for website
-
-/ should be rss for tech news and have options for challenges and profile
+fix smtp
 
 link rss and other frontend pages to backend
 
