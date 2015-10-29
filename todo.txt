@@ -9,3 +9,5 @@ push to live webserver on kenaissance.com
 consider switching from mcrypt to openssl
 
 look further into rijndael
+
+port fowarding
