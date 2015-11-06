@@ -19,14 +19,14 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		margin: 0;
 		text-decoration: none;
 	}
-	#testing {
+	#profile {
 		position: absolute;
 		text-align: center;
 		z-index: 100;
 		color: white;
 		font-size: 15px;
-		left: 35%;
-    	top: 21%;
+		left: 50%;
+    	top: 20%;
     	border-radius:5px;
     	background: rgba(0, 0, 0, 0.3);
     	padding: 10px;
@@ -34,9 +34,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 </style>
 </head>
 <body>
-		<div id = "testing">
-			Please click the confirmation we sent to your email. <br/> It may take several minutes to arrive.
-			<br/>
+		<div id = "profile">
+			Test
 		</div>
 </body>
 </html>

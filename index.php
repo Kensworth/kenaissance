@@ -147,6 +147,11 @@
     text-decoration: none;
     border-bottom: .25rem solid #001F67;
   }
+  #resume {
+    color: #434343;
+    border-bottom: .25rem solid #434343;
+  }
+
 </style>
 <script>
 $(document).ready(function() {
@@ -189,10 +194,8 @@ ga('send', 'pageview');
           <div class = "email">
             Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
           </div>
+            <a href = "/resume.pdf"><span id = "resume">Resume</span>
         </div>
-      </div>
-      <div class="parallax__layer parallax__layer--base">
-        <!--<img src = "http://i.imgur.com/Burv9vn.gif" height = "100%" width = "100%" id = "forest"/> -->
       </div>
     </div>
   </div>
