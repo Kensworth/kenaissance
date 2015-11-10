@@ -23,11 +23,6 @@
     font-size: 16px;
   }
   #rss {
-    z-index: 100;
-    position: absolute;
-    left: 50%;
-    top: 12%;
-    margin-left: -550px;
   }
 </style>
 <script>
