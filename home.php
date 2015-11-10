@@ -17,20 +17,10 @@
   a:hover   {color:gray;} 
   a:active  {color:#000;}
   #kenaissance {
-    top: 6%;
-    left: 50%;
     font-size: 30px;
-    margin-left:-80px;
-    text-align: center;
-    position: absolute;
   }
   #updateClock {
-    top: 9%;
-    left: 50%;
     font-size: 16px;
-    margin-left:-120px;
-    text-align: center;
-    position: absolute;
   }
   #rss {
     z-index: 100;
