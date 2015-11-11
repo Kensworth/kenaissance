@@ -18,11 +18,17 @@
   a:active  {color:#000;}
   #kenaissance {
     font-size: 30px;
+    text-align:center;
+    padding:10px;
   }
   #updateClock {
     font-size: 16px;
+    text-align:center;
+    padding-bottom: 10px
   }
   #rss {
+    margin:0 auto;
+    width:70%;
   }
 </style>
 <script>
