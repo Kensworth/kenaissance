@@ -19,12 +19,12 @@
   #kenaissance {
     font-size: 30px;
     text-align:center;
-    padding:10px;
+    padding:5px;
   }
   #updateClock {
     font-size: 16px;
     text-align:center;
-    padding-bottom: 10px
+    padding-bottom: 10px;
   }
   #rss {
     margin:0 auto;
