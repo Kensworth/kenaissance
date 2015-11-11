@@ -32,7 +32,7 @@
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: #001F67;
@@ -151,13 +151,17 @@
     color: #434343;
     border-bottom: .25rem solid #434343;
   }
+  #site {
+    color: #787878;
+    border-bottom: .25rem solid #787878;
+  }
 
 </style>
 <script>
 $(document).ready(function() {
   $(".parallax").animate({
       scrollTop: $(document).height()
-    }, 1000);
+    }, 800);
   return false;
 });
 </script>
@@ -195,6 +199,8 @@ ga('send', 'pageview');
             Contact: <a href="mailto:kennethzhang@yahoo.com"> kenneth.zhang@nyu.edu</a> 
           </div>
             <a href = "/resume.pdf"><span id = "resume">Resume</span>
+            <br />
+            <a href = "/home.php"><span id = "site">Site</span>
         </div>
       </div>
     </div>
