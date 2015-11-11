@@ -37,6 +37,9 @@
 				elseif(!$setActive->execute()) {
 					$pass = false;
 				}
+				else {
+					echo "<script>location.href='home.php';</script>";
+				}
 			}
 			else {
 				$pass = false;
