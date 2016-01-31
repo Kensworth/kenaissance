@@ -101,7 +101,7 @@
 		$connection->close();
 	}
 	else {
-		echo "<script>location.href='fail.php';</script>";
+		header('Location: /fail.php');
 	}
 ?>
 

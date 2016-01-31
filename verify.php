@@ -38,7 +38,7 @@
 					$pass = false;
 				}
 				else {
-					echo "<script>location.href='home.php';</script>";
+					header('Location: /home.php');
 				}
 			}
 			else {
@@ -50,6 +50,6 @@
 		$pass = false;
 	}
 	if($pass == false) {
-		echo "<script>location.href='fail.php';</script>";
+		header('Location: /fail.php');
 	}
 ?>

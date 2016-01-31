@@ -159,17 +159,17 @@ $(document).ready(function(){
 			else {
 				unset($_POST);
 				$_SESSION["loginerror"] = 1;
-				echo "<script>location.href='login.php';</script>";
+				header('Location: /login.php');
 			}
 		}
 		else {
 			unset($_POST);
 			$_SESSION["loginerror"] = 1;
-			echo "<script>location.href='login.php';</script>";
+			header('Location: /login.php');
 		}
 	}
 	if($pass == false) {
-		echo "<script>location.href='fail.php';</script>";
+		header('Location: /fail.php');
 	}
 ?>
 <?php else: ?>
